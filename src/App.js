@@ -10,7 +10,7 @@ import Accordion from "react-bootstrap/Accordion";
 function App() {
   document.body.style.backgroundColor = "#cfc4b2";
 
-  const handleClick = (e) => {};
+  // const handleClick = (e) => {};
 
   return (
     <Container>
