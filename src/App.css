@@ -71,6 +71,7 @@ header {
   font-family: 'Cabin', sans-serif;
   font-weight: bold;
   font-style: italic;
+  margin: 2vh;
 }
 
 a:link {
@@ -90,3 +91,4 @@ button.link { background:none; border:none; }
   width: 70%;
   height: auto;
 }
+
