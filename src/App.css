@@ -92,3 +92,17 @@ button.link { background:none; border:none; }
   height: auto;
 }
 
+.content{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between
+
+}
+
+@media (max-width: 800px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+    
+  }
+}
