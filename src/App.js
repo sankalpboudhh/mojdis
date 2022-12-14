@@ -6,11 +6,27 @@ import MojdiMen from "./mojdi-men.png";
 import FormalWomen from "./formal-women.png";
 import MojdiWomen from "./mojdi-women.png";
 import Accordion from "react-bootstrap/Accordion";
+import { Box, Button, Modal, Typography } from "@mui/material";
+import React from "react";
+
+const style = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 400,
+  bgcolor: "background.paper",
+  border: "2px solid #000",
+  boxShadow: 24,
+  p: 4,
+};
 
 function App() {
   document.body.style.backgroundColor = "#cfc4b2";
 
-  // const handleClick = (e) => {};
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   return (
     <>
@@ -46,13 +62,7 @@ function App() {
             </ul>
           </div>
 
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "space-between",
-            }}
-          >
+          <div className="content">
             <div
               style={{
                 display: "flex",
@@ -121,6 +131,7 @@ function App() {
                     <button
                       type="button"
                       className="btn"
+                      onClick={handleOpen}
                       style={{
                         backgroundColor: "#764637",
                         color: "white",
@@ -137,18 +148,19 @@ function App() {
 
             <div>
               <div>
-                <button className="link">
+                <button className="link" onClick={handleOpen}>
                   <img
                     src={MenFormal}
                     alt="Men Formal"
                     className="responsive"
+                    onClick={handleOpen}
                   ></img>
                   <p className="tag">Formal Shoes(Men)</p>
                 </button>
               </div>
 
               <div>
-                <button className="link">
+                <button className="link" onClick={handleOpen}>
                   <img
                     src={FormalWomen}
                     alt="FormalWomen"
@@ -160,7 +172,7 @@ function App() {
             </div>
             <div>
               <div>
-                <button className="link">
+                <button className="link" onClick={handleOpen}>
                   <img
                     src={MojdiMen}
                     alt="MojdiMen"
@@ -170,7 +182,7 @@ function App() {
                 </button>
               </div>
               <div>
-                <button className="link">
+                <button className="link" onClick={handleOpen}>
                   <img
                     src={MojdiWomen}
                     alt="MojdiWomen"
@@ -183,6 +195,29 @@ function App() {
           </div>
         </div>
       </Container>
+
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <Typography id="modal-modal-title" variant="h6" component="h2">
+            Call for Inquiry
+          </Typography>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+            Call on +91 987-654-3210
+          </Typography>
+          <div
+            style={{ display: "flex", justifyContent: "center", margin: "2vh" }}
+          >
+            <Button variant="contained" onClick={handleClose}>
+              Call
+            </Button>
+          </div>
+        </Box>
+      </Modal>
     </>
   );
 }
