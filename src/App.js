@@ -207,7 +207,7 @@ function App() {
             Call for Inquiry
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Call on +91 987-654-3210
+            Call on +91 987-654-32XX
           </Typography>
           <div
             style={{ display: "flex", justifyContent: "center", margin: "2vh" }}
